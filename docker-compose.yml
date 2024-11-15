@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres:latest  # Використовуємо образ PostgreSQL
+    container_name: clinic_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: clinic_db
+    ports:
+      - "5432:5432"  # Прокидуємо порт для доступу до БД
+    volumes:
+      - ./data:/var/lib/postgresql/data  # Прокидуємо папку для зберігання даних БД
